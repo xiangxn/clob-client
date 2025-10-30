@@ -362,7 +362,7 @@ export class ClobClient {
             this.useServerTime ? await this.getServerTime() : undefined,
         );
 
-        return await this.post(endpoint, { headers }).then((apiKeyRaw: ApiKeyRaw) => {
+        return await this.post(endpoint, { headers,data:{} }).then((apiKeyRaw: ApiKeyRaw) => {
             const apiKey: ApiKeyCreds = {
                 key: apiKeyRaw.apiKey,
                 secret: apiKeyRaw.secret,
@@ -388,7 +388,7 @@ export class ClobClient {
             this.useServerTime ? await this.getServerTime() : undefined,
         );
 
-        return await this.get(endpoint, { headers }).then((apiKeyRaw: ApiKeyRaw) => {
+        return await this.get(endpoint, { headers,data:{} }).then((apiKeyRaw: ApiKeyRaw) => {
             const apiKey: ApiKeyCreds = {
                 key: apiKeyRaw.apiKey,
                 secret: apiKeyRaw.secret,
