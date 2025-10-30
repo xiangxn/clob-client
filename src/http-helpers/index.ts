@@ -97,7 +97,7 @@ const errorHandling = (err: unknown) => {
                     status: err.response?.status,
                     statusText: err.response?.statusText,
                     data: err.response?.data,
-                    config: err.response?.config,
+                    config: {...err.response?.config,agent:undefined},
                 }),
             );
             if (err.response?.data) {
