@@ -126,7 +126,6 @@ import {
 import { OrderBuilder } from "./order-builder/builder";
 import { END_CURSOR, INITIAL_CURSOR } from "./constants";
 import { calculateBuyMarketPrice, calculateSellMarketPrice } from "./order-builder/helpers";
-import { AxiosHeaders } from "axios";
 
 export class ClobClient {
     readonly host: string;
