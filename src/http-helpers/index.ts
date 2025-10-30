@@ -1,6 +1,6 @@
 /* eslint-disable max-depth */
-import axios, { AxiosRequestHeaders, Method } from "axios";
-import { DropNotificationParams, OrdersScoringParams } from "src/types";
+import axios, { Method } from "axios";
+import { DropNotificationParams, OrdersScoringParams, RawAxiosHeaders } from "src/types";
 import { isBrowser } from "browser-or-node";
 
 export const axiosInstance = axios;
@@ -44,7 +44,7 @@ export const request = async (
 export type QueryParams = Record<string, any>;
 
 export interface RequestOptions {
-    headers?: AxiosRequestHeaders;
+    headers?: RawAxiosHeaders;
     data?: any;
     params?: QueryParams;
 }

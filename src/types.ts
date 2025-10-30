@@ -1,5 +1,9 @@
 import { SignatureType, SignedOrder } from "@polymarket/order-utils";
-import { AxiosRequestHeaders } from "axios";
+import { AxiosHeaderValue } from "axios";
+
+export interface RawAxiosHeaders {
+  [key: string]: AxiosHeaderValue;
+}
 
 export interface ApiKeyCreds {
     key: string;
@@ -20,7 +24,7 @@ export interface L2HeaderArgs {
 }
 
 // EIP712 sig verification
-export interface L1PolyHeader extends AxiosRequestHeaders {
+export interface L1PolyHeader extends RawAxiosHeaders {
     POLY_ADDRESS: string;
     POLY_SIGNATURE: string;
     POLY_TIMESTAMP: string;
@@ -28,7 +32,7 @@ export interface L1PolyHeader extends AxiosRequestHeaders {
 }
 
 // API key verification
-export interface L2PolyHeader extends AxiosRequestHeaders {
+export interface L2PolyHeader extends RawAxiosHeaders {
     POLY_ADDRESS: string;
     POLY_SIGNATURE: string;
     POLY_TIMESTAMP: string;
