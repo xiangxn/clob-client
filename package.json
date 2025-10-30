@@ -42,7 +42,8 @@
         "build": "make build",
         "lint": "make lint",
         "deploy": "yarn build && npm publish",
-        "test": "make test"
+        "test": "make test",
+        "prepare": "yarn build"
     },
     "dependencies": {
         "@polymarket/builder-signing-sdk": "^0.0.8",
@@ -84,5 +85,6 @@
     },
     "resolutions": {
         "@babel/traverse": ">=7.23.2"
-    }
+    },
+    "packageManager": "yarn@1.22.21+sha512.ca75da26c00327d26267ce33536e5790f18ebd53266796fbb664d2a4a5116308042dd8ee7003b276a20eace7d3c5561c3577bdd71bcb67071187af124779620a"
 }
