@@ -3,6 +3,7 @@ import axios, { AxiosRequestHeaders, Method } from "axios";
 import { DropNotificationParams, OrdersScoringParams } from "src/types";
 import { isBrowser } from "browser-or-node";
 
+export const axiosInstance = axios;
 export const GET = "GET";
 export const POST = "POST";
 export const DELETE = "DELETE";
@@ -37,7 +38,7 @@ export const request = async (
     params?: any,
 ): Promise<any> => {
     overloadHeaders(method, headers);
-    return await axios({ method, url: endpoint, headers, data, params });
+    return await axiosInstance({ method, url: endpoint, headers, data, params });
 };
 
 export type QueryParams = Record<string, any>;
