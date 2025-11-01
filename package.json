@@ -50,7 +50,8 @@
         "@polymarket/order-utils": "^2.1.0",
         "axios": "^1.13.1",
         "browser-or-node": "^2.1.1",
-        "ethers": "^5.7.1"
+        "ethers": "^5.7.1",
+        "socks-proxy-agent": "^8.0.5"
     },
     "devDependencies": {
         "@babel/core": "7.23.2",

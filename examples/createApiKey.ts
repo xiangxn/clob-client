@@ -5,6 +5,12 @@ import { Chain, ClobClient } from "../src";
 
 dotenvConfig({ path: resolve(__dirname, "../.env") });
 
+import axios from "axios";
+import { SocksProxyAgent } from "socks-proxy-agent";
+const agent = new SocksProxyAgent("socks5h://127.0.0.1:1080");
+axios.defaults.httpsAgent = agent;
+axios.defaults.httpAgent = agent;
+
 async function main() {
     const wallet = new ethers.Wallet(`${process.env.PK}`);
     const chainId = parseInt(`${process.env.CHAIN_ID || Chain.AMOY}`) as Chain;
